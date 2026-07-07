@@ -1,0 +1,184 @@
+{
+  "info": {
+    "_postman_id": "21f7e1fb-c8e3-48a0-9cbf-d67f7ae181f6",
+    "name": "Books API-Data Driven",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53665673",
+    "_collection_link": "https://go.postman.co/collection/53665673-21f7e1fb-c8e3-48a0-9cbf-d67f7ae181f6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Submit order",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsondata=pm.response.json();\r",
+              "pm.environment.set(\"order_id\",jsondata.orderId);\r",
+              "console.log(pm.environment.get(\"order_id\"));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "da791151c68182de6b0294e95123d4c5b856ee3a3f8d8fe33352173b1f464f12",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"bookId\": \"{{BookId}}\",\r\n  \"customerName\": \"{{CustomerName}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://simple-books-api.click/orders",
+          "protocol": "https",
+          "host": [
+            "simple-books-api",
+            "click"
+          ],
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get single order",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "var jsondata2=pm.response.json();\r",
+              "pm.environment.set(\"get_order_id\",jsondata2.id);\r",
+              "pm.test(\"test the order id\",()=>{\r",
+              "    pm.expect(jsondata2.id).to.eql(pm.environment.get(\"order_id\"));\r",
+              "}\r",
+              ")\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "da791151c68182de6b0294e95123d4c5b856ee3a3f8d8fe33352173b1f464f12",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://simple-books-api.click/orders/{{order_id}}",
+          "protocol": "https",
+          "host": [
+            "simple-books-api",
+            "click"
+          ],
+          "path": [
+            "orders",
+            "{{order_id}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete order",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.environment.unset(\"order_id\");\r",
+              "pm.environment.unset(\"get_order_id\");"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "da791151c68182de6b0294e95123d4c5b856ee3a3f8d8fe33352173b1f464f12",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://simple-books-api.click/orders/{{order_id}}",
+          "protocol": "https",
+          "host": [
+            "simple-books-api",
+            "click"
+          ],
+          "path": [
+            "orders",
+            "{{order_id}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

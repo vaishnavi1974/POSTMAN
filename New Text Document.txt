@@ -1,2 +1,8 @@
-TEst
-s
+"Good morning / Good afternoon.
+My name is Vaishnavi Venkatesh, and I'm a QA professional with 3.5 years of experience in software testing, specialising in the banking and financial services domain.
+I completed my Bachelor of Engineering in Telecommunication from Dayananda Sagar College of Engineering in 2022, following which I joined Cognizant as a Programmer Analyst.
+My first project at Cognizant was a banking decommissioning engagement for OCBC Bank, where I worked as a manual and automation tester. My responsibilities included designing and executing test scenarios for banking system files, conducting functional and regression testing for online and mobile banking platforms, and managing defects end to end in JIRA. This project gave me a strong foundation in understanding how banking systems operate and how quality needs to be maintained even during complex system transitions.
+In October 2024, I moved into the Cards and Payments team as an Associate, where I have been working on a card acquirer automation project. Here, my focus has been on building and maintaining automation scripts using Selenium WebDriver with Java and TestNG, validating APIs using Postman, and integrating our test suites with Jenkins for continuous testing. I work in an Agile environment, participating in sprint ceremonies, collaborating closely with developers and business analysts, and ensuring that quality is built into every sprint.
+Throughout my career, the banking domain has been a constant — I understand the stakes involved in financial applications, the importance of accuracy, and the compliance considerations that come with this space.
+I am now looking to take the next step in my career by moving into a Quality Engineering Lead role, where I can take ownership of the test strategy, drive quality at a team level, and contribute more broadly to delivery outcomes — which is what brings me here to Infosys today.
+Thank you for this opportunity, and I look forward to our conversation.
